@@ -11,6 +11,7 @@ gem 'paperclip'
 gem 'sass-rails', '~> 5.0'
 gem "active_model_serializers", "~> 0.8.0"
 gem 'uglifier', '>= 1.3.0'
+gem 'rails_12factor'
 #gem 'coffee-rails', '~> 4.1.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
