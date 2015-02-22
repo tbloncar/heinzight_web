@@ -1,11 +1,9 @@
 module Imageable
   extend ActiveSupport::Concern
 
-  ROOT_URL = ":s3_domain_url"
-
   def absolute_image_url(image)
     return unless image
 
-    ROOT_URL + image.url
+    "http://heinzight.s3-website-us-west-2.amazonaws.com" + image.url
   end
 end
