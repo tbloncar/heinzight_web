@@ -1,3 +1,3 @@
-class ExhibitSerialize < ActiveModel::Serializer
+class ExhibitSerializer < ActiveModel::Serializer
   attributes :id, :name, :image_url
 end
