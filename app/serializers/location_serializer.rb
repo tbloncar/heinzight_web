@@ -1,5 +1,5 @@
 class LocationSerializer < ActiveModel::Serializer
-  attributes :name, :logo_url, :background_image_url, :latitude,
+  attributes :id, :name, :logo_url, :background_image_url, :latitude,
     :longitude
 
   has_many :exhibits

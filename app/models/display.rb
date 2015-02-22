@@ -1,5 +1,6 @@
 class Display < ActiveRecord::Base
   include Syncable
+  include Imageable
 
   validates :name, presence: true
   validates :beacon_uuid, presence: true
@@ -14,4 +15,8 @@ class Display < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :medium => "350x350>", :thumb => "150x150>" }
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  def image_url
+    absolute_image_url(image)
+  end
 end
