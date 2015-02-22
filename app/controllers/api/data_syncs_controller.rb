@@ -10,6 +10,7 @@ class Api::DataSyncsController < ApplicationController
       if status.version > version.to_i
         render json: {
           message: "Need sync.",
+          version: status.version,
           data: ActiveModel::ArraySerializer.new(Location.all, each_serializer: LocationSerializer)
         }, status: :ok
       else
