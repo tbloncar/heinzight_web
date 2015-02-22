@@ -1,5 +1,5 @@
 AdminUser.create!([
-  {email: "admin@example.com", encrypted_password: "$2a$10$PisHSXCQBMOhDq/BbZ/bJO939maShLOl0fKLNpzjwszyw1bV37mtu", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-22 02:15:31", last_sign_in_at: "2015-02-22 02:15:31", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+  {email: "admin@example.com", password: "password", password_confirmation: "password" }
 ])
 Display.create!([
   {name: "Ferris Wheel", child_content: "This is some content for Children.", adult_content: "This is some content for Adults.", beacon_uuid: "11111111-2222-3333-4444-555555555555", beacon_major_num: 1, beacon_minor_num: 1, location_id: 1, exhibit_id: 1, image_file_name: "ferriswheel.jpg", image_content_type: "image/jpeg", image_file_size: 779104, image_updated_at: "2015-02-22 03:41:48"},
