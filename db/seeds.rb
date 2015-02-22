@@ -1,6 +1,3 @@
-AdminUser.create!([
-  {email: "admin@example.com", password: "password", password_confirmation: "password" }
-])
 Display.create!([
   {name: "Ferris Wheel", child_content: "This is some content for Children.", adult_content: "This is some content for Adults.", beacon_uuid: "11111111-2222-3333-4444-555555555555", beacon_major_num: 1, beacon_minor_num: 1, location_id: 1, exhibit_id: 1, image_file_name: "ferriswheel.jpg", image_content_type: "image/jpeg", image_file_size: 779104, image_updated_at: "2015-02-22 03:41:48"},
   {name: "Andrew Carnegie", child_content: "This is some content for children.", adult_content: "This is some content for adults.", beacon_uuid: "11111111-2222-3333-4444-555555555555", beacon_major_num: 1, beacon_minor_num: 2, location_id: 1, exhibit_id: 1, image_file_name: "carnegie.jpg", image_content_type: "image/jpeg", image_file_size: 471841, image_updated_at: "2015-02-22 03:55:11"},
