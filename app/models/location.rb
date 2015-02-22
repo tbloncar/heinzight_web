@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
   include Syncable
+  include Imageable
 
   validates :street, presence: true
   validates :city, presence: true
@@ -21,6 +22,14 @@ class Location < ActiveRecord::Base
 
   def address
     "#{street}, #{city}, #{state} #{zip_code}"
+  end
+
+  def logo_url
+    absolute_image_url(logo)
+  end
+
+  def background_image_url
+    absolute_image_url(background_image)
   end
 
   private
