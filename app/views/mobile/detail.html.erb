@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      font-family:'avenir-next';
+      margin:0px;
+    }
+    img.exhibit-img{
+      width:100%;
+      height:auto;
+    }
+    ul.main-ul{
+      padding:0px;
+    }
+    li.main-bullet{
+      list-style-type:none;
+    }
+    div.topic-header{  
+      background-color:#B71234;
+      padding:20px 0 10px 30px;
+      text-transform:uppercase;
+      border-bottom:solid 3px #B30E30;
+    }
+    div.topic-header h3{
+      margin:0;
+      display:inline-block;
+      vertical-align:top;
+    }
+    /* Chevron CSS */
+    span.chevron{
+      margin-right:10px;
+      display:inline;
+      height:22px;
+      width:22px;
+    }
+    span.chevron-right{
+      background:url('assets/chevron-right.png') no-repeat;
+      height:22px;
+      width:22px;
+    }
+    span.chevron-down{
+      background:url('assets/chevron-down.png') no-repeat;
+      height:22px;
+      width:22px;
+    }
+    li.main-bullet span.chevron span.chevron-down,
+    li.main-bullet.active span.chevron span.chevron-right{
+      display:none;
+    }
+    li.main-bullet span.chevron span.chevron-right,
+    li.main-bullet.active span.chevron span.chevron-down{
+      display:inline-block;
+    }
+    /* CSS for the main content list transitions */
+    li.main-bullet div.topic-content{
+      overflow-y:hidden;
+      -webkit-transition: max-height 0.01s ease;
+      transition: max-height 0.1s ease;
+      max-height:0;
+    }
+    li.main-bullet.active div.topic-content{
+      max-height:1000px;
+      -webkit-transition:max-height 0.5s ease;
+      transition:max-height 0.5s ease;
+    }
+    /* Dummy content CSS */
+    li.main-bullet ul.topic-bullets{
+      list-style-type:disc;
+      font-size:30px;
+      color:#B71234;
+    }
+    ul.topic-bullets p{
+      color:#000000;
+      font-size:16px;
+    }
+  </style>
+</head>
+<body>
+  <img class="exhibit-img" src="" />
+  <div class="exhibit-content">
+    <ul class="main-ul">
+      <% content_items.each do |content_item| %>
+        <li class="main-bullet">
+          <div class="topic-header">
+            <span class="chevron">
+              <span class="chevron-down"></span>
+              <span class="chevron-right"></span>
+            </span>
+            <h3><%= content_item.title %></h3>
+          </div>
+          <div class="topic-content">
+            <%= content_item.content %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',function(event){
+      var els = document.getElementsByClassName('main-bullet');
+      console.log(els);
+      for(i = 0; i < els.length; i++){
+      els[i].onclick = function(){
+        for(j = 0; j < els.length; j++){
+          els[j].classList.remove('active');
+        }
+        this.classList.add('active');
+      };
+      }
+    });
+  </script>
+</body>
+</html>

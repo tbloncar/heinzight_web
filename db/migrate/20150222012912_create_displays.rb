@@ -2,8 +2,6 @@ class CreateDisplays < ActiveRecord::Migration
   def change
     create_table :displays do |t|
       t.string :name
-      t.text :child_content
-      t.text :adult_content
       t.string :beacon_uuid
       t.integer :beacon_major_num
       t.integer :beacon_minor_num
