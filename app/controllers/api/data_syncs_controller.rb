@@ -11,7 +11,10 @@ class Api::DataSyncsController < ApplicationController
         render json: {
           message: "Need sync.",
           version: status.version,
-          data: ActiveModel::ArraySerializer.new(Location.all, each_serializer: LocationSerializer)
+          data: {
+            locations: ActiveModel::ArraySerializer.new(Location.all, each_serializer: LocationSerializer),
+            display_interests: DisplayInterest.all
+          }
         }, status: :ok
       else
         render json: { message: "Up to date!" }, status: :ok
