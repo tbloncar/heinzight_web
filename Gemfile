@@ -8,7 +8,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'devise'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'sass-rails', '~> 5.0'
 gem "active_model_serializers", "~> 0.8.0"
 gem 'uglifier', '>= 1.3.0'
